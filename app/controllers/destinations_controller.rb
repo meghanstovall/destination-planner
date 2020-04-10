@@ -6,6 +6,7 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    @destination_facade = WeatherFacade.new(params[:id])
   end
 
   def new

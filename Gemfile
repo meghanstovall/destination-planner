@@ -7,6 +7,12 @@ end
 
 ruby '2.5.3'
 
+gem 'pry'
+gem 'faraday'
+gem 'figaro'
+gem 'fast_jsonapi'
+gem 'capybara'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.7'
 # Use postgresql as the database for Active Record

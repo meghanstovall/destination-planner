@@ -2,28 +2,37 @@
   <p id="notice"><%= notice %></p>
 
   <h3>
-    <%= @destination.name %>
+    <%= @destination_facade.destination.name %>
   </h3>
 
   <p>
     <strong>Zip:</strong>
-    <%= @destination.zip %>
+    <%= @destination_facade.destination.zip %>
   </p>
 
   <p>
     <strong>Description:</strong>
-    <%= @destination.description %>
+    <%= @destination_facade.destination.description %>
   </p>
 
-  <%= image_tag(@destination.image_url) %>
+  <%= image_tag(@destination_facade.destination.image_url) %>
 
   <div class="row">
-    <h4>Forecast for <%= @destination.name %>:</h4>
-
+    <h4>Forecast for <%= @destination_facade.destination.name %>:</h4>
+    <ul class="current-weather">
+      <li id="date"> <%= Date.today %></li>
+      <li id="current"> <%= @destination_facade.current_weather %></li>
+      <li id="max_temp"> <%= @destination_facade.max_temp %></li>
+      <li id="min_temp"> <%= @destination_facade.min_temp %></li>
+      <li id="summary"> <%= @destination_facade.summary %></li>
+    </ul>
   </div>
 
+  <%= image_tag(@destination_facade.giphy) %>
+
+
   <div class="row">
-    <%= link_to 'Edit', edit_destination_path(@destination) %> |
+    <%= link_to 'Edit', edit_destination_path(@destination_facade.destination) %> |
     <%= link_to 'Back', destinations_path %>
   </div>
 </div>
